@@ -9,6 +9,8 @@ const PORT = 3001;
 
 app.use(express.static(__dirname + "/../client/dist/"));
 
+// TEST
+
 let client = new huejay.Client({
   host: process.env.BRIDGE,
   username: "Iwt-WfYwI7aVgRUBrt3lxCGsP5C7sHK16hFdSmGE"
