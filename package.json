@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start":
+      "concurrently \"cd server && nodemon \" \"cd client && yarn start\""
+  }
+}

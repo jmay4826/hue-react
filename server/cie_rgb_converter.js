@@ -116,7 +116,7 @@ function cie_to_rgb({ bri: brightness, xy: [x, y] }) {
  * @param {Number} blue
  * @return {Array} Array that contains the CIE color values for x and y
  */
-function rgb_to_cie(red, green, blue) {
+function rgb_to_cie([red, green, blue, alpha]) {
   //Apply a gamma correction to the RGB values, which makes the color more vivid and more the like the color displayed on the screen of your device
   var red =
     red > 0.04045 ? Math.pow((red + 0.055) / (1.0 + 0.055), 2.4) : red / 12.92;
@@ -142,7 +142,7 @@ function rgb_to_cie(red, green, blue) {
 
   if (isNaN(y)) y = 0;
 
-  return [x, y];
+  return [+x, +y];
 }
 
 module.exports = { rgb_to_cie, cie_to_rgb };

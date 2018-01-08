@@ -8,6 +8,7 @@ require("dotenv").config();
 const PORT = 3001;
 
 app.use(express.static(__dirname + "/../client/dist/"));
+app.use(bodyParser.json());
 
 // TEST
 
@@ -24,6 +25,8 @@ app.set("client", client);
 // };
 
 app.get("/api/lights", controller.getAllLights);
+app.put("/api/lights/:id", controller.updateLight);
+app.post("/api/lights/:id", controller.colorLoop);
 
 // let user = new client.users.User();
 
